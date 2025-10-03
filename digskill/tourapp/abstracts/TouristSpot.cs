@@ -20,7 +20,7 @@ public abstract class TouristSpot : Service
         return "ずっと来たかった" + this.name;
     }
 
-    public int Claim()
+    public int Cost()
     {
         return this.cost;
     }

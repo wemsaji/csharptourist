@@ -23,9 +23,14 @@ public abstract class Restaurant : Service
         return "美味しいと噂の" + this.name;
     }
 
-    public virtual int Claim()
+    public virtual int Cost()
     {
         return this.menu[this.order];
+    }
+
+    public int Claim()
+    {
+        return (int)(this.Cost() * Service.ReducedTaxRate);
     }
 
     public string Serve()

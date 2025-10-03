@@ -22,7 +22,7 @@ public abstract class Transportation : Service
         return "移動手段として" + this.name;
     }
 
-    public int Claim()
+    public int Cost()
     {
         return this.costPerKm * distanceKm;
     }

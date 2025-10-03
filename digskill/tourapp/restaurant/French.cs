@@ -10,8 +10,8 @@ public class French : Restaurant
         this.menu["コーヒー"] = 800;
     }
 
-    public override int Claim()
+    public override int Cost()
     {
-        return (int)(base.Claim() * 1.1);
+        return (int)(base.Cost() * 1.1);
     }
 }
