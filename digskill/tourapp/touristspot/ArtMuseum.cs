@@ -1,30 +1,10 @@
+using digskill.tourapp.abstracts;
+
 namespace digskill.tourapp.touristspot;
 
-public class ArtMuseum
+public class ArtMuseum : TouristSpot
 {
-    private string name;
-    private int cost;
-    private string voice;
-
-    public ArtMuseum()
+    public ArtMuseum() : base("美術館", 5500, "美しい")
     {
-        this.name = "美術館";
-        this.cost = 5500;
-        this.voice = "美しい";
-    }
-
-    public string Name()
-    {
-        return "ずっと来たかった" + this.name;
-    }
-
-    public int Claim()
-    {
-        return this.cost;
-    }
-
-    public string Exhibition()
-    {
-        return this.voice;
     }
 }

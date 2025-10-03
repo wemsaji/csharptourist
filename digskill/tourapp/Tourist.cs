@@ -1,4 +1,4 @@
-using digskill.tourapp.touristspot;
+using digskill.tourapp.abstracts;
 using digskill.utility;
 
 namespace digskill.tourapp;
@@ -26,11 +26,11 @@ public class Tourist
         this.logger.Out(log);
     }
 
-    public bool Pay(ArtMuseum artMuseum)
+    public bool Pay(TouristSpot touristSpot)
     {
         bool paid = false;
-        string name = artMuseum.Name();
-        int cost = artMuseum.Claim();
+        string name = touristSpot.Name();
+        int cost = touristSpot.Claim();
         string log = name + "を利用します。";
         this.logger.Out(log);
 
@@ -48,9 +48,9 @@ public class Tourist
         return paid;
     }
 
-    public void Visit(ArtMuseum artMuseum)
+    public void Visit(TouristSpot touristSpot)
     {
-        string log = artMuseum.Exhibition();
+        string log = touristSpot.Exhibition();
         log += "・・・感動しました！";
         this.logger.Out(log);
     }
