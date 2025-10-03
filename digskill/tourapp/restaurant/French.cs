@@ -9,4 +9,9 @@ public class French : Restaurant
         this.menu["ステーキ"] = 9000;
         this.menu["コーヒー"] = 800;
     }
+
+    public override int Claim()
+    {
+        return (int)(base.Claim() * 1.1);
+    }
 }

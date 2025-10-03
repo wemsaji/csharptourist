@@ -23,7 +23,7 @@ public abstract class Restaurant : Service
         return "美味しいと噂の" + this.name;
     }
 
-    public int Claim()
+    public virtual int Claim()
     {
         return this.menu[this.order];
     }
