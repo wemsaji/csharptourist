@@ -1,6 +1,8 @@
+using digskill.tourapp.interfaces;
+
 namespace digskill.tourapp.abstracts;
 
-public abstract class TouristSpot
+public abstract class TouristSpot : Service
 {
     private string name;
     private int cost;

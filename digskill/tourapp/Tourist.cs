@@ -1,4 +1,5 @@
 using digskill.tourapp.abstracts;
+using digskill.tourapp.interfaces;
 using digskill.utility;
 
 namespace digskill.tourapp;
@@ -26,11 +27,11 @@ public class Tourist
         this.logger.Out(log);
     }
 
-    public bool Pay(TouristSpot touristSpot)
+    public bool Pay(Service service)
     {
         bool paid = false;
-        string name = touristSpot.Name();
-        int cost = touristSpot.Claim();
+        string name = service.Name();
+        int cost = service.Claim();
         string log = name + "を利用します。";
         this.logger.Out(log);
 
@@ -52,6 +53,14 @@ public class Tourist
     {
         string log = touristSpot.Exhibition();
         log += "・・・感動しました！";
+        this.logger.Out(log);
+    }
+
+    public void Ride(Transportation transportation)
+    {
+        string log = transportation.Transport();
+        log += "・・・" + transportation.Distance();
+        log += "移動しました！";
         this.logger.Out(log);
     }
 }
