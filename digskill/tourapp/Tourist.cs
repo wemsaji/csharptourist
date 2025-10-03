@@ -63,4 +63,11 @@ public class Tourist
         log += "移動しました！";
         this.logger.Out(log);
     }
+
+    public void Eat(Restaurant restaurant)
+    {
+        String log = restaurant.Serve();
+        log += "・・・美味しかった～！";
+        this.logger.Out(log);
+    }
 }
