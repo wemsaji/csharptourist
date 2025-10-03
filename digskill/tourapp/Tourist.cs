@@ -1,3 +1,4 @@
+using digskill.tourapp.touristspot;
 using digskill.utility;
 
 namespace digskill.tourapp;
@@ -22,6 +23,35 @@ public class Tourist
     {
         string log = "残金は" + this.money + "円。";
         log += "最高の旅でした！";
+        this.logger.Out(log);
+    }
+
+    public bool Pay(ArtMuseum artMuseum)
+    {
+        bool paid = false;
+        string name = artMuseum.Name();
+        int cost = artMuseum.Claim();
+        string log = name + "を利用します。";
+        this.logger.Out(log);
+
+        if (cost <= this.money)
+        {
+            this.money -= cost;
+            log = cost + "円を支払いました";
+            paid = true;
+        }
+        else
+        {
+            log = cost + "円を持っていません・・・";
+        }
+        this.logger.Out(log);
+        return paid;
+    }
+
+    public void Visit(ArtMuseum artMuseum)
+    {
+        string log = artMuseum.Exhibition();
+        log += "・・・感動しました！";
         this.logger.Out(log);
     }
 }
